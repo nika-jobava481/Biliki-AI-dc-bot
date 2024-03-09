@@ -1,0 +1,16 @@
+{
+  "name": "biliki_ai",
+  "version": "1.0.1",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index",
+    "commands":"node src/register-commands"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.14.1",
+    "dotenv": "^16.4.5"
+  }
+}
