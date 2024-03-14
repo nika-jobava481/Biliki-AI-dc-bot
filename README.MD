@@ -13,7 +13,7 @@
    - Returns an embed based on the provided parameters. 
      - Parameters:
        - **destination**: Destination for the route.
-       - **interests**: Interests separated by commas.
+       - **interests**: Interests separated by spaces.
        - **from**: Start date (DD-MM-YYYY).
        - **to**: End date (DD-MM-YYYY).
        - **budget**: Budget ($).
