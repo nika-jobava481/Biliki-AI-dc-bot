@@ -1,4 +1,7 @@
 require('dotenv').config();
+const puppeteer = require('puppeteer');
+const axios = require('axios');
+
 
 const { Client, IntentsBitField, EmbedBuilder, GuildMember } = require('discord.js');
 
@@ -145,25 +148,21 @@ client.on('guildMemberRemove', (member) => {
 
 })
 
-function getRouteResponse(destination, cost, from, to, interests) {
+function getRouteResponse(destination, budget, from, to, interests) {
+    let uniqueID = createUniqueString();
     let embed = new EmbedBuilder()
         .setTitle(`${destination} Tour Details`)
-        .setDescription(`Experience the beauty and excitement of ${destination}!`)
+        .setDescription(`### 🌟 **Amsterdam Tour Details** 🌟
+        Experience the beauty and excitement of Amsterdam! 🏙️
+        
+        **💰 Cost:** $3000  
+        **📅 Date:** 2024-03-22 to 2024-03-29  
+        **⛵ Interests:** Adventure
+        
+        [🔍 see tour details](${`https://biliki.ai/pages/display_tour.html?uniqueID=${uniqueID}&destination=${destination}&startDate=${from}&toDate=${to}&budget=${budget}&interests=${interests}`})`)
         .setColor("#1dff00")
-        .addFields(
-            {
-                name: "Cost",
-                value: `$${cost}`,
-            },
-            {
-                name: "Date",
-                value: `${from} to ${to}`,
-            },
-            {
-                name: "Interests",
-                value: `${interests}`,
-            },
-        )
+
+
     return embed
 }
 
@@ -233,6 +232,33 @@ function getSustainabilityResponse() {
 
     return embed
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function createUniqueString() {
+    const timestamp = new Date().getTime(); // Current timestamp
+    const randomNum = Math.floor(Math.random() * 1000000); // Random number
+    const uniqueString = `${timestamp}${randomNum}`;
+    return uniqueString;
+}
+
+
+
 
 
 

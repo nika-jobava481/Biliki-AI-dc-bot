@@ -26,20 +26,20 @@ const commands = [
             },
             {
                 name: "interests",
-                description: "interests (seperated by commas)",
+                description: "interests (seperated by spaces)",
                 type: ApplicationCommandOptionType.String,
                 required: true,
             },
             {
                 name: "from",
-                description: "start date (DD-MM-YYYY)",
+                description: "start date (YYYY-MM-DD)",
                 type: ApplicationCommandOptionType.String,
                 required: true,
 
             },
             {
                 name: "to",
-                description: "end date (DD-MM-YYYY)",
+                description: "end date (YYYY-MM-DD)",
                 type: ApplicationCommandOptionType.String,
                 required: true,
 

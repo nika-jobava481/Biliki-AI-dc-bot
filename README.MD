@@ -10,7 +10,7 @@
    - Returns an embed focused on sustainability.
 
 4. **getroute**
-   - Returns an embed based on provided parameters. 
+   - Returns an embed based on the provided parameters. 
      - Parameters:
        - **destination**: Destination for the route.
        - **interests**: Interests separated by commas.
@@ -18,5 +18,5 @@
        - **to**: End date (DD-MM-YYYY).
        - **budget**: Budget ($).
 
-   Note: In the future, this command might return planned tours and details.
+   Note: This command returns an embed styled with details such as cost, date, and interests. Additionally, it provides a link to view more details about the tour.
 
