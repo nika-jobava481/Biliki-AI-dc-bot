@@ -102,12 +102,15 @@ client.on("interactionCreate", (interaction) => {
         case 'about':
             interaction.reply({ embeds: [getAboutResponse()], files: ['./src/assets/about-thumbnail.png', './src/assets/logo.png'] })
             break;
+        case 'sustainability':
+            interaction.reply({ embeds: [getSustainabilityResponse()], files: ['./src/assets/sustainability.png', './src/assets/logo.png'] })
+            break;
         case 'getroute':
             let destination = interaction.options.get("destination").value;
             let from = interaction.options.get("from").value;
             let to = interaction.options.get("to").value;
-            let interests = interaction.options.get("interests").value;
             let budget = interaction.options.get("budget").value;
+            let interests = interaction.options.get("interests").value;
 
             interaction.reply({ embeds: [getRouteResponse(destination, budget, from, to, interests)] })
             break;
@@ -129,7 +132,7 @@ client.on('guildMemberAdd', (member) => {
 });
 
 client.on('guildMemberRemove', (member) => {
-    console.log("leave\n\n\n\n",member)
+    console.log("leave\n\n\n\n", member)
 
     const guild = member.guild;
 
@@ -201,6 +204,37 @@ function getAboutResponse() {
 
     return embed
 }
+
+function getSustainabilityResponse() {
+    const bilikiAITitle = `**Eco-Conscious Explorers: Journeying Towards Sustainable Travel 🌱**`
+    const bilikiAIDescription = `**Mission:** 
+    Empowering travelers to make sustainable choices at every step of their journey.
+    
+    **What We Offer:**
+
+    🗺 **Destination Insights:** Discover eco-friendly destinations for mindful exploration.
+
+    🌍 **Carbon Footprint Tips:** Learn how to minimize your travel impact on the environment.
+
+    🌱 **Sustainable Discussions:** Engage in conversations about eco-conscious accommodations, transportation, and more.
+
+    🤝 **Connect & Collaborate:** Join fellow travelers who are passionate about responsible exploration.
+
+    
+    Embark on a journey with us towards a more sustainable and harmonious world. Every traveler can make a difference!`;
+
+
+    const embed = new EmbedBuilder()
+        .setTitle(bilikiAITitle)
+        .setDescription(bilikiAIDescription)
+        .setColor('#1dff00')
+        .setImage('attachment://sustainability.png')
+        .setThumbnail('attachment://logo.png')
+
+    return embed
+}
+
+
 
 
 

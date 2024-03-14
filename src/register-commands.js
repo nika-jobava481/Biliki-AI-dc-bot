@@ -3,16 +3,16 @@ const { REST, Routes, ApplicationCommandOptionType } = require('discord.js');
 
 const commands = [
     {
-        name: "member",
-        description: "member join",
-    },
-    {
         name: "ping",
         description: "ping",
     },
     {
         name: 'about',
         description: 'about Biliki AI',
+    },
+    {
+        name: 'sustainability',
+        description: 'sustainability',
     },
     {
         name: "getroute",
