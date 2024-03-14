@@ -1,6 +1,5 @@
 require('dotenv').config();
-const puppeteer = require('puppeteer');
-const axios = require('axios');
+
 
 
 const { Client, IntentsBitField, EmbedBuilder, GuildMember } = require('discord.js');
